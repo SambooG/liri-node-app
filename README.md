@@ -17,3 +17,8 @@ leery about jumping into a new song without knowing what you'll hear?**
 
 ##**video of liri-bot in action**
 https://drive.google.com/file/d/1EbljicKS7hAwV90TG4MWL59XqRRVzMyB/view?usp=sharing
+
+Code/ program by Samantha Gaiser. sgaiser3@gmail.com
+
+live github page: https://samboog.github.io/liri-node-app/
+repository: https://github.com/SambooG/liri-node-app
