@@ -2,7 +2,8 @@
 let dotenv = require("dotenv").config();
 var Spotify = require('node-spotify-api');
 var keys = require("./key.js");
-let 
+let fs = require ("fs");
+
 
 var spotify = new Spotify(keys.spotify);
 
@@ -40,61 +41,15 @@ spotify.search({ type: 'track', query: song, limit: 1 }, function(err, data) {
     const album = songObject.album.name;
     console.log(`artists: ${artists},\n preview: ${preview},\n name: ${name},\n album: ${album}` )
   }
-}) 
-
-const axios = require('axios');
-
-// Make a request for a user with a given ID
-axios.get('/user?ID=12345')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });
-
-// Optionally the request above could also be done as
-axios.get('/user', {
-    params: {
-      ID: 12345
+}); 
+let finishedAnswer = process.argv[2];
+// function songInfo(){
+  fs.appendFile("log.txt", finishedAnswer + ',', 'utf8', function(err){
+    if(err){
+      return console.log(err);
     }
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-  .finally(function () {
-    // always executed
-  });  
-
-// Want to use async/await? Add the `async` keyword to your outer function/method.
-async function getUser() {
-  try {
-    const response = await axios.get('/user?ID=12345');
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
-}
-      
-// Artist(s)
+  });
+// }
 
 
-// The song's name
-
-
-// A preview link of the song from Spotify
-
-
-// The album that the song is from
-
-
-
-// .then(function(inquirerResponse, err) {
+  
